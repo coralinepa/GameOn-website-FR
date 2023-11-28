@@ -167,7 +167,6 @@ function validateForm(values) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
- fix/correct-file-error
   // Création d'une constante formData pour créer une instance formData qui contient les valeurs du formulaire.
   const formData = new FormData(form);
 
