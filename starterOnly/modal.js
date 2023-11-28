@@ -167,20 +167,12 @@ function validateForm(values) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // Création d'une constante formData pour créer un nouvel objet formData dans le formulaire.
+ fix/correct-file-error
+  // Création d'une constante formData pour créer une instance formData qui contient les valeurs du formulaire.
   const formData = new FormData(form);
 
-  const entries = [
-    ["firstName", "Coraline"],
-    ["lastName", "Parreau"],
-  ];
-  // Création d'une constante values pour transformer et récupérer les paires clés et valeurs dans le formulaire.
+  // Création d'une constante values pour transformer en objet les couples clé/valeur des entrées du formulaire
   const values = Object.fromEntries(formData.entries());
-
-  const values = {
-    firstName: "Coraline",
-    lastName: "Parreau",
-  };
 
   // Création d'une constante errors pour regrouper toutes les erreurs du formulaire.
   const errors = validateForm(values);
