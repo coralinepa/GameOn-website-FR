@@ -17,7 +17,7 @@ const formBtn = document.querySelector(".btn-submit");
 const modalConfirm = document.getElementById("confirm");
 const closeMessage = document.getElementById("closeMessage");
 
-// Création de constante pour récuperer les noeuds htmd les champs du formulaire
+// Création de constante pour récupérer les éléments html des champs du formulaire
 const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
@@ -63,7 +63,7 @@ function isRequired(value) {
   return value && value.trim();
 }
 
-// Création d'une fonction isMinLength pour vérifier la longeur minimum de la valeur d'un champ
+// Création d'une fonction isMinLength pour vérifier la longueur minimum de la valeur d'un champ
 function isMinLength(value, min) {
   return value.length >= min;
 }
@@ -102,6 +102,7 @@ function isValidDate(value) {
 function validateForm(values) {
   //Création d'une constante pour stocker les erreurs des différents champs s'il y en a.
   const errors = {};
+
   // Instruction d'une condition : si le nom n'est pas renseigné, on ajoute une erreur à l'objet errors.
   if (!isRequired(values.firstName)) {
     errors.firstName = "Veuillez renseigner ce champs.";
@@ -167,13 +168,27 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   // Création d'une constante formData pour créer un nouvel objet formData dans le formulaire.
-  // Création d'une constante values pour transformer et récupérer les paires cles et valeurs dans le formulaire.
-  // Création d'une constante errors pour regrouper toutes les erreurs du formulaire.
   const formData = new FormData(form);
+
+  const entries = [
+    ["firstName", "Coraline"],
+    ["lastName", "Parreau"],
+  ];
+  // Création d'une constante values pour transformer et récupérer les paires clés et valeurs dans le formulaire.
   const values = Object.fromEntries(formData.entries());
+
+  const values = {
+    firstName: "Coraline",
+    lastName: "Parreau",
+  };
+
+  // Création d'une constante errors pour regrouper toutes les erreurs du formulaire.
   const errors = validateForm(values);
+
+  // Création d'une constante pour récupérer l'ensemble des clés des champs de formulaire
   const fieldNames = Object.keys(formElements);
 
+  // Création d'une constante pour savoir si la validation retourne des erreurs.
   const hasErrors = Object.keys(errors).length > 0;
 
   // Instruction d'une condition : s'il y a des erreurs
@@ -183,7 +198,7 @@ form.addEventListener("submit", (e) => {
     fieldNames.forEach((field) => {
       // Pour chaque élément on récupère le parent
       const parent = formElements[field].parentElement;
-      // Pour chaque élément on récupère un erreur si elle existe
+      // Pour chaque élément on récupère une erreur si elle existe
       const error = errors[field];
 
       if (error) {
@@ -201,7 +216,7 @@ form.addEventListener("submit", (e) => {
     return false;
   }
 
-  // S'il n'y a pas d'erreur de validation, la fonction continue de s'exécuter et le formulaire pourra être envoyé
+  // S'il n'y a pas d'erreur de validation, la fonction continue de s'exécuter, le formulaire pourra être envoyé et le message de succès est affiché
   modalConfirm.style.display = "flex";
   //Si le formulaire est validé et envoyé, on le réinitialise
   form.reset();
