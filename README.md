@@ -1,19 +1,29 @@
-# Projet 4 : Créez une landing page avec Javascript
+GameOn – Formulaire d’inscription interactif
 
+GameOn est un projet de validation pour apprendre à dynamiser une interface avec JavaScript.
+L'objectif est de rendre un formulaire interactif et accessible, en assurant la gestion d’erreurs, la validation des champs, l’affichage de modales et la réactivité aux événements utilisateur.
 
-## Objectif
-Après avoir édité des livres de cuisine pendant plusieurs années, l’entreprise a décidé de se lancer dans un nouveau projet : réaliser son propre site de recettes de cuisine à l’instar de Marmiton ou 750g.
-- Réaliser deux algorithmes distincts, le premier avec une boucle native (for, while...) et l'autre avec une boucle fonctionnelle (forEach, map).
-- Comparer les performances des deux algorithmes.
+Compétences mises en œuvre
+- Manipuler le DOM en JavaScript
+- Gérer des événements utilisateur
+- Valider dynamiquement les données d’un formulaire
+- Appliquer des règles d’accessibilité
+- Implémenter des modales interactives
 
+Fonctionnalités principales
+- Formulaire responsive avec validation des champs
+- Erreurs affichées dynamiquement sous chaque champ
+- Modal de confirmation après soumission
+- Accessibilité clavier et rôles ARIA
+- Tests de validation (date, email, radio, checkbox, etc.)
 
-💡 Technologies
-- HTML, CSS
-- JavaScript 
+Technologies utilisées
+- HTML / CSS
+- JavaScript Vanilla
+- ARIA / W3C Accessibility Guidelines
+- Git & GitHub
 
-📥 Installation
-- Télécharger le dépôt ```git clone https://github.com/coralinepa/GameOn-website-FR.git```
-- Ouvrir index.html dans le navigateur (ou utiliser un serveur local)
-- Modifier HTML/CSS/JS, puis rafraîchir la page pour voir les changements
-
-
+Installation
+```git clone https://github.com/coralinepa/GameOn-website-FR.git```
+```cd GameOn-website-FR```
+Ouvre index.html dans ton navigateur ou utilise Live Server (VS Code).
